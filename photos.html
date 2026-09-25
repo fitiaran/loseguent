@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Photos — L'Enxaneta</title>
+  <meta name="description" content="Galerie photos de L'Enxaneta : plats, glaces, ambiance et cadre du restaurant.">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+</head>
+<body>
+
+  <div id="navbar"></div>
+
+  <main>
+    <section style="padding-bottom:0;">
+      <div class="container">
+        <p class="eyebrow">Galerie</p>
+        <h1 style="max-width:16ch">Un aperçu en images</h1>
+        <p style="max-width:52ch;color:#5B4A3B">
+          Plats, glaces, desserts, ambiance et cadre — un aperçu de ce qui vous attend chez L'Enxaneta.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox__close" aria-label="Fermer"><span aria-hidden="true">&times;</span></button>
+    <img id="lightboxImg" src="" alt="">
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/layout.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/gallery-render.js"></script>
+</body>
+</html>
