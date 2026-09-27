@@ -8,7 +8,6 @@
     return `
       <figure data-reveal style="--i:${i % 6}">
         <img src="${img.src}" alt="${img.alt}" loading="lazy" data-full="${img.src}">
-        <figcaption>${img.alt}</figcaption>
       </figure>`;
   }
 

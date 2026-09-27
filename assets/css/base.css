@@ -1,12 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&display=swap');
 
+/* =========================================================
+   PALETTE — répartition conseillée
+   ---------------------------------------------------------
+   45 %  Crème vanillé ....... #FBF3E0  (fond dominant)
+   25 %  Noir profond ........ #101116  (navbar, footer, hero,
+                                          CTA, panneau Restaurant)
+   20 %  Orange chaleureux ... #E88B17  (accent principal :
+                                          boutons, tags, liens)
+    7 %  Or doré ............. #F5BC45  (accent secondaire :
+                                          survols, dégradés)
+    3 %  Bleu glacier ........ #36B5D0  (touche rare, réservée
+                                          à la Glacerie)
+   ========================================================= */
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
-  background: #FBF5E9;
-  color: #33261B;
+  background: #FBF3E0;
+  color: #1B1C22;
   font-family: "Work Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
   line-height: 1.6;
@@ -20,7 +34,7 @@ h1, h2, h3, h4 {
   font-weight: 500;
   line-height: 1.12;
   margin: 0 0 1rem;
-  color: #33261B;
+  color: #101116;
 }
 h1 { font-size: clamp(2.8rem, 2.1rem + 2.8vw, 4.6rem); }
 h2 { font-size: clamp(2.1rem, 1.7rem + 1.6vw, 3.1rem); }
@@ -39,7 +53,7 @@ a { color: inherit; text-decoration: none; }
 .eyebrow {
   font-family: "Work Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
-  color: #6B4A32;
+  color: #E88B17;
   letter-spacing: 0.02em;
   margin-bottom: 0.5rem;
 }
@@ -51,9 +65,14 @@ section { padding: 7rem 0; }
 }
 
 :focus-visible {
-  outline: 2px solid #C9702E;
+  outline: 2px solid #E88B17;
   outline-offset: 3px;
 }
+
+/* Patch : ces pages ont un style inline color:#5B4A3B codé en dur dans le
+   HTML (hérité d'un ancien thème), qui ne correspond plus à la palette
+   actuelle. On le surcharge ici puisque seuls les CSS sont à modifier. */
+p[style*="#5B4A3B"] { color: rgba(16,17,22,0.62) !important; }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -72,12 +91,12 @@ section { padding: 7rem 0; }
   top: 0;
   z-index: 100;
   width: 100%;
-  background: rgba(251, 245, 233, 0.86);
+  background: rgba(16, 17, 22, 0.94);
   backdrop-filter: blur(10px) saturate(1.1);
-  border-bottom: 1px solid rgba(180, 134, 43, 0.35);
+  border-bottom: 1px solid rgba(245, 188, 69, 0.25);
   transition: box-shadow 220ms cubic-bezier(.22,.61,.36,1), padding 220ms cubic-bezier(.22,.61,.36,1);
 }
-.navbar.is-scrolled { box-shadow: 0 10px 30px -18px rgba(74,51,34,0.4); }
+.navbar.is-scrolled { box-shadow: 0 10px 30px -18px rgba(0,0,0,0.55); }
 
 .navbar__inner {
   max-width: 1240px;
@@ -89,8 +108,14 @@ section { padding: 7rem 0; }
   gap: clamp(0.75rem, 2vw, 2rem);
 }
 
-.navbar__logo img { height: clamp(30px, 4vw, 40px); width: auto; }
-.navbar__logo { flex: 0 0 auto; }
+.navbar__logo {
+  flex: 0 0 auto;
+  display: inline-flex;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(251, 243, 224, 0.94);
+}
+.navbar__logo img { height: clamp(26px, 3.6vw, 36px); width: auto; display: block; }
 
 .navbar__nav {
   display: flex;
@@ -106,7 +131,7 @@ section { padding: 7rem 0; }
   font-size: clamp(0.78rem, 1.4vw, 0.98rem);
   white-space: nowrap;
   padding: 0.3rem 0.05rem;
-  color: #5B4A3B;
+  color: rgba(251,243,224,0.75);
   transition: color 220ms cubic-bezier(.22,.61,.36,1);
 }
 .navbar__nav a::after {
@@ -115,13 +140,13 @@ section { padding: 7rem 0; }
   left: 0; right: 100%;
   bottom: -3px;
   height: 1.5px;
-  background: #B4862B;
+  background: #E88B17;
   transition: right 480ms cubic-bezier(.22,.61,.36,1);
 }
-.navbar__nav a:hover, .navbar__nav a:focus-visible { color: #33261B; }
+.navbar__nav a:hover, .navbar__nav a:focus-visible { color: #FBF3E0; }
 .navbar__nav a:hover::after, .navbar__nav a:focus-visible::after,
 .navbar__nav a.is-active::after { right: 0; }
-.navbar__nav a.is-active { color: #33261B; font-weight: 500; }
+.navbar__nav a.is-active { color: #FBF3E0; font-weight: 500; }
 
 @media (max-width: 480px) {
   .navbar__nav { gap: 0.55rem; }
@@ -132,17 +157,15 @@ section { padding: 7rem 0; }
    FOOTER
    ========================================================= */
 .footer {
-  background:
-    linear-gradient(180deg, rgba(74,51,34,0.04), rgba(74,51,34,0.09)),
-    #F5EEDD;
-  border-top: 1px solid rgba(180, 134, 43, 0.35);
+  background: linear-gradient(175deg, #17181F 0%, #101116 100%);
+  border-top: 1px solid rgba(245, 188, 69, 0.2);
   padding: 4rem 0 2rem;
   position: relative;
 }
 .footer::before {
   content: "";
   position: absolute; inset: 0;
-  background: repeating-linear-gradient(115deg, rgba(107,74,50,0.05) 0 2px, transparent 2px 26px);
+  background: repeating-linear-gradient(115deg, rgba(251,243,224,0.03) 0 2px, transparent 2px 26px);
   pointer-events: none;
 }
 .footer__grid {
@@ -158,30 +181,37 @@ section { padding: 7rem 0; }
   .footer__grid { grid-template-columns: 1fr; }
 }
 
-.footer__logo img { height: 34px; margin-bottom: 1rem; }
-.footer__blurb { color: #5B4A3B; font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); max-width: 32ch; }
+.footer__logo {
+  display: inline-flex;
+  padding: 0.3rem 0.6rem;
+  border-radius: 8px;
+  background: rgba(251, 243, 224, 0.94);
+  margin-bottom: 1rem;
+}
+.footer__logo img { height: 30px; display: block; }
+.footer__blurb { color: rgba(251,243,224,0.72); font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); max-width: 32ch; }
 
 .footer h4 {
   font-family: "Work Sans", "Segoe UI", Helvetica, Arial, sans-serif;
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
   font-weight: 600;
-  color: #6B4A32;
+  color: #F5BC45;
   margin-bottom: 0.9rem;
 }
 .footer ul { list-style: none; margin: 0; padding: 0; }
-.footer li { margin-bottom: 0.55rem; }
-.footer a { color: #5B4A3B; font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); transition: color 220ms; }
-.footer a:hover { color: #C9702E; }
+.footer li { margin-bottom: 0.55rem; color: rgba(251,243,224,0.72); }
+.footer a { color: rgba(251,243,224,0.72); font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); transition: color 220ms; }
+.footer a:hover { color: #E88B17; }
 
 .footer__bottom {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid rgba(180, 134, 43, 0.35);
+  border-top: 1px solid rgba(251, 243, 224, 0.14);
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.5rem;
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
-  color: #5B4A3B;
+  color: rgba(251,243,224,0.55);
   position: relative;
 }

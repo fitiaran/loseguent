@@ -28,11 +28,7 @@
     root.innerHTML = `
       <section>
         <div class="container intro">
-          <div>
-            <div class="intro__mark"></div>
-            <p class="eyebrow">${it.eyebrow}</p>
-            <h2>${SITE.name}</h2>
-          </div>
+          <h2>${it.eyebrow}</h2>
           <p class="intro__text" data-reveal>${it.text}</p>
         </div>
       </section>`;

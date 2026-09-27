@@ -17,18 +17,21 @@
 .btn:hover { transform: translateY(-2px); }
 
 .btn--solid {
-  background: linear-gradient(135deg, #C9702E, #B4862B);
-  color: #FFFDF8;
-  box-shadow: 0 18px 40px -22px rgba(74, 51, 34, 0.35);
+  background: linear-gradient(135deg, #E88B17, #F5BC45);
+  color: #FBF3E0;
+  box-shadow: 0 18px 40px -22px rgba(16,17,22,0.45);
 }
-.btn--solid:hover { box-shadow: 0 22px 40px -18px rgba(201,112,46,0.55); }
+.btn--solid:hover { box-shadow: 0 22px 40px -18px rgba(232,139,23,0.5); }
 
+/* Par défaut le fond dominant du site est crème (clair) : le bouton
+   "outline" est donc sombre par défaut. Les zones en noir profond
+   (Restaurant, CTA finale) ont leur propre variante claire plus bas. */
 .btn--outline {
   background: transparent;
-  border-color: #6B4A32;
-  color: #6B4A32;
+  border-color: rgba(16,17,22,0.35);
+  color: #101116;
 }
-.btn--outline:hover { background: #6B4A32; color: #FFFDF8; }
+.btn--outline:hover { background: #101116; color: #FBF3E0; }
 
 /* =========================================================
    HERO
@@ -49,12 +52,12 @@
 .hero__media::after {
   content: "";
   position: absolute; inset: 0;
-  background: linear-gradient(0deg, rgba(51,38,27,0.75) 0%, rgba(51,38,27,0.28) 45%, rgba(51,38,27,0.05) 70%);
+  background: linear-gradient(0deg, rgba(16,17,22,0.82) 0%, rgba(16,17,22,0.32) 45%, rgba(16,17,22,0.06) 70%);
 }
 .hero__content {
   position: relative;
   z-index: 2;
-  color: #FFFDF8;
+  color: #FBF3E0;
   padding: 4rem 2rem 7rem;
   max-width: 1240px;
   margin: 0 auto;
@@ -65,12 +68,12 @@
   margin-bottom: 2rem;
   padding: 0.55rem 1rem;
   border-radius: 10px;
-  background: rgba(255, 253, 248, 0.88);
+  background: rgba(251, 243, 224, 0.9);
   backdrop-filter: blur(6px);
 }
 .hero__logo img { height: clamp(26px, 3.5vw, 40px); width: auto; display: block; }
-.hero__title { font-size: clamp(2.8rem, 2.1rem + 2.8vw, 4.6rem); color: #FFFDF8; max-width: 14ch; }
-.hero__tagline { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); color: #E7D3A8; max-width: 34ch; margin-bottom: 2rem; font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-style: italic; font-weight: 400; }
+.hero__title { font-size: clamp(2.8rem, 2.1rem + 2.8vw, 4.6rem); color: #FBF3E0; max-width: 14ch; }
+.hero__tagline { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); color: #F5D9A3; max-width: 34ch; margin-bottom: 2rem; font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-style: italic; font-weight: 400; }
 .hero__actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* =========================================================
@@ -86,14 +89,17 @@
 .intro__mark {
   width: 74px; height: 74px;
   border-radius: 62% 38% 55% 45% / 45% 55% 45% 55%;
-  background: linear-gradient(135deg, #E7A23D, #C9702E);
+  background: linear-gradient(135deg, #E88B17, #F5BC45);
   margin-bottom: 2rem;
 }
-.intro__text { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-weight: 400; line-height: 1.4; color: #33261B; }
+.intro__text { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-weight: 400; line-height: 1.4; color: #101116; }
 
 /* =========================================================
    SECTIONS RESTAURANT / GLACERIE
-   Identité proche, nuances distinctes
+   Restaurant : noir profond, gastronomique.
+   Glacerie : reste claire (crème), avec le bleu glacier comme
+   unique touche d'identité — c'est la seule zone du site où
+   cette couleur apparaît, comme prévu par la répartition (3 %).
    ========================================================= */
 .split {
   display: grid;
@@ -114,20 +120,29 @@
   flex-direction: column;
   justify-content: center;
 }
-.split__text--resto { background: #F3E8D2; }
-.split__text--ice { background: #FDF9EF; }
+.split__text--resto { background: #101116; }
+.split__text--ice   { background: #F5EAD4; }
+
+.split__text--resto h3 { color: #FBF3E0; }
+.split__text--resto p  { color: rgba(251,243,224,0.75); }
+.split__text--resto .btn--outline {
+  border-color: rgba(251,243,224,0.45);
+  color: #FBF3E0;
+}
+.split__text--resto .btn--outline:hover { background: #FBF3E0; color: #101116; }
 
 .tag {
   display: inline-block;
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
-  color: #6B4A32;
-  border: 1px solid rgba(107,74,50,0.35);
+  color: #FBF3E0;
+  border: 1px solid rgba(251,243,224,0.4);
   border-radius: 999px;
   padding: 0.3rem 0.9rem;
   margin-bottom: 1rem;
   width: fit-content;
 }
-.tag--ice { color: #C9702E; border-color: rgba(201,112,46,0.4); }
+/* Glacerie : seule touche de bleu glacier du site */
+.tag--ice { color: #1B8FA8; border-color: rgba(54,181,208,0.5); }
 
 /* =========================================================
    AMBIANCE — mosaïque asymétrique
@@ -146,20 +161,20 @@
 }
 
 /* =========================================================
-   CTA FINAL
+   CTA FINAL — noir profond, comme le panneau Restaurant
    ========================================================= */
 .cta-final {
   text-align: center;
-  background: linear-gradient(160deg, #6B4A32, #4A3322);
-  color: #FFFDF8;
+  background: linear-gradient(160deg, #17181F, #101116);
+  color: #FBF3E0;
   border-radius: 18px;
   padding: 7rem 2rem;
 }
-.cta-final h2 { color: #FFFDF8; }
-.cta-final p { color: #E7D3A8; margin-left: auto; margin-right: auto; }
+.cta-final h2 { color: #FBF3E0; }
+.cta-final p { color: rgba(251,243,224,0.72); margin-left: auto; margin-right: auto; }
 .cta-final .actions { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 2rem; }
-.cta-final .btn--outline { color: #E7D3A8; border-color: rgba(251,245,233,0.5); }
-.cta-final .btn--outline:hover { background: #E7D3A8; color: #4A3322; }
+.cta-final .btn--outline { border-color: rgba(251,243,224,0.45); color: #FBF3E0; }
+.cta-final .btn--outline:hover { background: #FBF3E0; color: #101116; }
 
 /* =========================================================
    MENU — page
@@ -173,25 +188,25 @@
 .menu-tab {
   padding: 0.6rem 1.3rem;
   border-radius: 999px;
-  border: 1px solid rgba(107,74,50,0.3);
+  border: 1px solid rgba(16,17,22,0.22);
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
-  color: #5B4A3B;
+  color: rgba(16,17,22,0.7);
   background: transparent;
   cursor: pointer;
   transition: all 220ms cubic-bezier(.22,.61,.36,1);
 }
-.menu-tab.is-active, .menu-tab:hover { background: #6B4A32; color: #FFFDF8; border-color: #6B4A32; }
+.menu-tab.is-active, .menu-tab:hover { background: #E88B17; color: #FBF3E0; border-color: #E88B17; }
 
 .menu-category { margin-bottom: 7rem; }
 .menu-category__head {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  border-bottom: 1px solid rgba(180, 134, 43, 0.35);
+  border-bottom: 1px solid rgba(16,17,22,0.15);
   padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
-.menu-category__head p { margin: 0; color: #5B4A3B; font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); }
+.menu-category__head p { margin: 0; color: rgba(16,17,22,0.55); font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); }
 
 .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem 2.5rem; }
 @media (max-width: 720px) { .menu-grid { grid-template-columns: 1fr; } }
@@ -200,14 +215,14 @@
   display: flex;
   gap: 1rem;
   padding: 1rem 0;
-  border-bottom: 1px dashed rgba(107,74,50,0.22);
+  border-bottom: 1px dashed rgba(16,17,22,0.15);
 }
 .menu-item__photo { width: 64px; height: 64px; border-radius: 6px; object-fit: cover; flex: 0 0 auto; }
 .menu-item__body { flex: 1; min-width: 0; }
 .menu-item__row { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; }
-.menu-item__name { font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); color: #33261B; }
-.menu-item__price { font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); color: #B4862B; white-space: nowrap; }
-.menu-item__desc { color: #5B4A3B; font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); margin: 0.2rem 0 0; }
+.menu-item__name { font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); color: #101116; }
+.menu-item__price { font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-size: clamp(1rem, 0.95rem + 0.2vw, 1.125rem); color: #E88B17; white-space: nowrap; }
+.menu-item__desc { color: rgba(16,17,22,0.55); font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); margin: 0.2rem 0 0; }
 
 /* =========================================================
    GALERIE — page Photos
@@ -229,8 +244,8 @@
 .gallery figcaption {
   position: absolute; left: 0; right: 0; bottom: 0;
   padding: 1.6rem 1rem 0.8rem;
-  background: linear-gradient(0deg, rgba(51,38,27,0.75), transparent);
-  color: #FFFDF8;
+  background: linear-gradient(0deg, rgba(16,17,22,0.8), transparent);
+  color: #FBF3E0;
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
   opacity: 0;
   transform: translateY(6px);
@@ -240,7 +255,7 @@
 
 .lightbox {
   position: fixed; inset: 0; z-index: 200;
-  background: rgba(51,38,27,0.92);
+  background: rgba(16,17,22,0.94);
   display: none;
   align-items: center; justify-content: center;
   padding: 2rem;
@@ -249,7 +264,7 @@
 .lightbox img { max-width: min(90vw, 1100px); max-height: 85vh; border-radius: 6px; }
 .lightbox__close {
   position: absolute; top: 2rem; right: 2rem;
-  color: #FFFDF8; background: none; border: 1px solid rgba(255,255,255,0.4);
+  color: #FBF3E0; background: none; border: 1px solid rgba(251,243,224,0.4);
   border-radius: 999px; width: 42px; height: 42px; cursor: pointer; font-size: 1.1rem;
 }
 
@@ -260,38 +275,38 @@
 @media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
 
 .info-card {
-  background: #FFFDF8;
-  border: 1px solid rgba(180, 134, 43, 0.35);
+  background: #F5EAD4;
+  border: 1px solid rgba(232,139,23,0.25);
   border-radius: 18px;
   padding: 2rem;
   margin-bottom: 2rem;
 }
 .info-card h3 { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); margin-bottom: 0.8rem; }
 .info-card dl { margin: 0; }
-.info-card dt { font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); color: #6B4A32; margin-top: 0.7rem; }
-.info-card dd { margin: 0.1rem 0 0; color: #33261B; }
+.info-card dt { font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); color: #E88B17; margin-top: 0.7rem; }
+.info-card dd { margin: 0.1rem 0 0; color: #1B1C22; }
 
 .social-row { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
 .social-row a {
   padding: 0.5rem 1rem;
-  border: 1px solid rgba(107,74,50,0.3);
+  border: 1px solid rgba(16,17,22,0.22);
   border-radius: 999px;
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
   transition: all 220ms;
 }
-.social-row a:hover { background: #6B4A32; color: #FFFDF8; }
+.social-row a:hover { background: #E88B17; color: #FBF3E0; }
 
-.map-frame { border-radius: 18px; overflow: hidden; border: 1px solid rgba(180, 134, 43, 0.35); }
+.map-frame { border-radius: 18px; overflow: hidden; border: 1px solid rgba(232,139,23,0.25); }
 
 .hours-table { width: 100%; border-collapse: collapse; }
-.hours-table td { padding: 0.4rem 0; border-bottom: 1px dashed rgba(107,74,50,0.2); font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); }
-.hours-table td:last-child { text-align: right; color: #5B4A3B; }
+.hours-table td { padding: 0.4rem 0; border-bottom: 1px dashed rgba(16,17,22,0.13); font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); }
+.hours-table td:last-child { text-align: right; color: rgba(16,17,22,0.55); }
 
 .placeholder-note {
   font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem);
-  color: #C9702E;
-  background: rgba(201,112,46,0.08);
-  border: 1px dashed rgba(201,112,46,0.4);
+  color: #B5690A;
+  background: rgba(232,139,23,0.1);
+  border: 1px dashed rgba(232,139,23,0.4);
   border-radius: 6px;
   padding: 0.7rem 1rem;
   margin-top: 1rem;

@@ -81,11 +81,9 @@
         </div>
         <div class="container footer__bottom">
           <span>${f.copyright}</span>
-          <span>Site conçu pour L'Enxaneta</span>
         </div>
       </footer>`;
   }
-
   document.addEventListener("DOMContentLoaded", () => {
     renderNavbar();
     renderFooter();
