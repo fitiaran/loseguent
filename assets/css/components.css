@@ -81,9 +81,10 @@
    ========================================================= */
 .intro {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
+  grid-template-columns: 1fr;
   gap: 4rem;
   align-items: center;
+  margin-bottom: -100px; /* pour que le bloc suivant (split) remonte un peu et se superpose */
 }
 @media (max-width: 800px) { .intro { grid-template-columns: 1fr; } }
 .intro__mark {
@@ -92,7 +93,7 @@
   background: linear-gradient(135deg, #E88B17, #F5BC45);
   margin-bottom: 2rem;
 }
-.intro__text { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-weight: 400; line-height: 1.4; color: #101116; }
+.intro__text { font-size: 27px; font-family: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif; font-weight: 400; line-height: 1.4; color: #101116; }
 
 /* =========================================================
    SECTIONS RESTAURANT / GLACERIE
@@ -104,7 +105,7 @@
 .split {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0;
+  gap: 0rem;
   align-items: stretch;
   border-radius: 18px;
   overflow: hidden;
@@ -120,12 +121,18 @@
   flex-direction: column;
   justify-content: center;
 }
-.split__text--resto { background: #101116; }
-.split__text--ice   { background: #F5EAD4; }
+.split__text--resto { background: #B98245; }
+.split__text--ice   { background: #B98245; }
 
 .split__text--resto h3 { color: #FBF3E0; }
 .split__text--resto p  { color: rgba(251,243,224,0.75); }
 .split__text--resto .btn--outline {
+  border-color: rgba(251,243,224,0.45);
+  color: #FBF3E0;
+}
+.split__text--ice h3 { color: #FBF3E0; }
+.split__text--ice p  { color: rgba(251,243,224,0.75); }
+.split__text--ice .btn--outline {
   border-color: rgba(251,243,224,0.45);
   color: #FBF3E0;
 }
@@ -142,7 +149,7 @@
   width: fit-content;
 }
 /* Glacerie : seule touche de bleu glacier du site */
-.tag--ice { color: #1B8FA8; border-color: rgba(54,181,208,0.5); }
+.tag--ice { color: #F5EBDD; border-color: #F5EBDD; }
 
 /* =========================================================
    AMBIANCE — mosaïque asymétrique
@@ -272,7 +279,8 @@
    CONTACT / INFOS
    ========================================================= */
 .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; } }
+.contact-grid > * { min-width: 0; }
+@media (max-width: 860px) { .contact-grid { grid-template-columns: 1fr; gap: 2rem; } }
 
 .info-card {
   background: #F5EAD4;
@@ -280,11 +288,12 @@
   border-radius: 18px;
   padding: 2rem;
   margin-bottom: 2rem;
+  overflow-wrap: break-word;
 }
 .info-card h3 { font-size: clamp(1.25rem, 1.15rem + 0.4vw, 1.5rem); margin-bottom: 0.8rem; }
 .info-card dl { margin: 0; }
 .info-card dt { font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); color: #E88B17; margin-top: 0.7rem; }
-.info-card dd { margin: 0.1rem 0 0; color: #1B1C22; }
+.info-card dd { margin: 0.1rem 0 0; color: #1B1C22; overflow-wrap: break-word; word-break: break-word; }
 
 .social-row { display: flex; gap: 0.8rem; margin-top: 1rem; flex-wrap: wrap; }
 .social-row a {
@@ -296,7 +305,8 @@
 }
 .social-row a:hover { background: #E88B17; color: #FBF3E0; }
 
-.map-frame { border-radius: 18px; overflow: hidden; border: 1px solid rgba(232,139,23,0.25); }
+.map-frame { border-radius: 18px; overflow: hidden; border: 1px solid rgba(232,139,23,0.25); width: 100%; max-width: 100%; }
+.map-frame iframe { width: 100% !important; max-width: 100% !important; display: block; border: 0; }
 
 .hours-table { width: 100%; border-collapse: collapse; }
 .hours-table td { padding: 0.4rem 0; border-bottom: 1px dashed rgba(16,17,22,0.13); font-size: clamp(0.83rem, 0.8rem + 0.15vw, 0.95rem); }

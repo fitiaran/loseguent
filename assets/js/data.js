@@ -87,7 +87,7 @@ const SITE = {
     email: "ainarakotondrazaka14@gmail.com",
     social: [
       { label: "Instagram : Lo_seguent_madagascar", href: "https://www.facebook.com/Lo.Seguent.Madagascar?_rdc=1&_rdr#" },
-      { label: "Facebook : Lo següent madagascar", href: "https://www.instagram.com/lo_seguent_madagascar/" },
+      { label: "Facebook : Lo següent madagascar", href: "https://www.instagram.com/lo_seguent_madagascar" },
     ],
     copyright: "© 2026 Lo següent. Tous droits réservés.",
   },
@@ -106,10 +106,13 @@ const MENU = [
     description: "Entrées, plats et suggestions de saison.",
     coverImage: "assets/images/menu-restaurant.jpg",
     items: [
-      { name: "[Nom du plat]", description: "[Description courte du plat]", price: "[Prix] Ar" },
-      { name: "[Nom du plat]", description: "[Description courte du plat]", price: "[Prix] Ar" },
-      { name: "[Nom du plat]", description: "[Description courte du plat]", price: "[Prix] Ar" },
-      { name: "[Nom du plat]", description: "[Description courte du plat]", price: "[Prix] Ar" },
+      { name: "Gaufre aux fruits de mer", description: "", price: "16.000Ar" },
+      { name: "Salade de fruits de mer", description: "", price: "16.000Ar" },
+      { name: "Soupe de riz", description: "", price: "17.000Ar" },
+      { name: "Soupe aux nouilles", description: "", price: "17.000Ar" },
+      { name: "Nouilles sautées", description: "", price: "17.000Ar" },
+      { name: "Hamburger poulet nuggets", description: "", price: "17.000Ar" },
+      { name: "Nuggets poulet", description: "", price: "16.000Ar" },
     ],
   },
    {
