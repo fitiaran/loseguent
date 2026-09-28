@@ -106,13 +106,18 @@ const MENU = [
     description: "Entrées, plats et suggestions de saison.",
     coverImage: "assets/images/menu-restaurant.jpg",
     items: [
-      { name: "Gaufre aux fruits de mer", description: "", price: "16.000Ar" },
-      { name: "Salade de fruits de mer", description: "", price: "16.000Ar" },
-      { name: "Soupe de riz", description: "", price: "17.000Ar" },
-      { name: "Soupe aux nouilles", description: "", price: "17.000Ar" },
-      { name: "Nouilles sautées", description: "", price: "17.000Ar" },
+      { name: "Gaufre aux fruits de mer", description: "", price: "18.000Ar" },
+      { name: "Salade de fruits de mer", description: "", price: "18.000Ar" },
+      { name: "Soupe de riz", description: "", price: "20.000Ar" },
       { name: "Hamburger poulet nuggets", description: "", price: "17.000Ar" },
       { name: "Nuggets poulet", description: "", price: "16.000Ar" },
+      { name: "Frites maison", description: "Fromage, viance de zébu, oeuf", price: "15.000Ar" },
+      { name: "Hamburger viande", description: "", price: "15.000Ar" },
+      { name: "Trio tacos", description: "Viande, poulet, fruits de mer", price: "22.000Ar" },
+      { name: "Croustillant de fruits de mer", description: "", price: "22.000Ar" },
+      { name: "Frites", description: "", price: "7.000Ar" },
+      { name: "Gratin aux fruits de mer", description: "", price: "18.000Ar" },
+
     ],
   },
    {
@@ -129,6 +134,19 @@ const MENU = [
       { name: "Poulet fumé", description: "Sauce tomate, fromage, poulet fumé, champignon, feuille de basilic. Accompagnement salade", price: "29.000Ar" },
       { name: "Fruits de mer", description: "Crème, fromage, filet de poisson, crevettes, calmar, oignon. Accompagnement salade", price: "29.000Ar" },
       { name: "Calzone", description: "Crème, délice de dinde, fromage, champignon. Accompagnement salade", price: "27.000Ar" },
+    ],
+  },
+   {
+    id: "Pâte",
+    label: "Pâtes",
+    description: "Pâtes faites maison",
+    coverImage: "assets/images/menu-pizza.jpg",
+    items: [
+      { name: "Lasagnes", description: "", price: "20.000Ar" },
+      { name: "Tagliatelles aux fruits de mer", description: "", price: "21.000Ar" },
+      { name: "Tagliatelles aux poulets", description: "", price: "25.000Ar" },
+      { name: "Nouilles sautés", description: "", price: "21.000Ar" },
+      { name: "Soupe aux nouilles", description: "", price: "21.000Ar" },
     ],
   },
   {
